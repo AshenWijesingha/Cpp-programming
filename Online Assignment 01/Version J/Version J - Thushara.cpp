@@ -1,10 +1,10 @@
-// Using String
+// Paper Version : J
 
 #include<iostream>
 
 using namespace std;
 
-// You can put this code segment in Plane.h file -----
+// Class declarration
 class Plane {
     private:
         int planeID;
@@ -16,12 +16,14 @@ class Plane {
         string getDestination();
         void setPiolet();
 };
-// ----------------------------------------------------
+
 
 int main() {
 
+    // Create an Objects
     Plane p1, p2, p3, p4;
 
+    // Set values to Objects
     p1.setPlaneDetails(1, "John", "USA");
     p2.setPlaneDetails(2, "George", "UK");
     p3.setPlaneDetails(3, "Henry", "USA");
@@ -40,7 +42,7 @@ int main() {
     return 0;
 }
 
-// You can put this code segment in Plane.cpp file -----
+// Class methods definition
 void Plane::setPlaneDetails(int pID, string p, string d) {
     planeID = pID;
     piolet = p;
@@ -61,4 +63,3 @@ void Plane::setPiolet() {
 string Plane::getDestination() {
     return destination;
 }
-// ----------------------------------------------------

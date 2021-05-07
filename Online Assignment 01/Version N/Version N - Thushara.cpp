@@ -1,36 +1,39 @@
-// Using Char Arrays
+// Paper Version : N
 
 #include<iostream>
-#include<cstring>
 
 using namespace std;
 
-// You can put this code segment in Train.h file -----
+// Class declarration
 class Train {
     private:
         int trainID;
         int capacity;
-        char startTime[15];
-        char destination[10];
+        string startTime;
+        string destination;
     public:
-        void setTrainDetails(int tID, int c, char sT[10], char d[15]);
+        void setTrainDetails(int tID, int c, string sT, string d);
         void displayTrainDetails();
         void setStartTime();
 };
-// ----------------------------------------------------
+
 
 int main() {
 
+	// Create an Objects
     Train t1, t2, t3;
+	
+	// Set values to Objects
+    t1.setTrainDetails(1, 200, "6:00AM", "Kandy");
+    t2.setTrainDetails(2, 150, "7:30AM", "Galle");
+    t3.setTrainDetails(3, 300, "4:00AM", "Jaffna");
 
-    t1.setTrainDetails(1, 200, (char *)"6:00AM", (char *)"Kandy");
-    t2.setTrainDetails(2, 150, (char *)"7:30AM", (char *)"Galle");
-    t3.setTrainDetails(3, 300, (char *)"4:00AM", (char *)"Jaffna");
-
+    // Calling setStartTime() Method
     t1.setStartTime();
     t2.setStartTime();
     t3.setStartTime();
 
+    // Calling displayTrainDetails() Method
     t1.displayTrainDetails();
     t2.displayTrainDetails();
     t3.displayTrainDetails();
@@ -38,12 +41,12 @@ int main() {
     return 0;
 }
 
-// You can put this code segment in Train.cpp file -----
-void Train::setTrainDetails(int tID, int c, char sT[10], char d[15]) {
+// Class methods definition 
+void Train::setTrainDetails(int tID, int c, string sT, string d) {
     trainID = tID;
     capacity = c;
-    strcpy(startTime, sT);
-    strcpy(destination, d);
+    startTime = sT;
+    destination = d;
 }
 
 void Train::displayTrainDetails() {
@@ -57,4 +60,3 @@ void Train::setStartTime() {
     cout << "Input new start time of train " << trainID << ": ";
     cin >> startTime;
 }
-// ----------------------------------------------------
